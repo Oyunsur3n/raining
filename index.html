@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        height: 100vh;
+        background-color: #e0ffff;
+        position: relative;
+      }
+      .cloud-1,
+      .cloud-2,
+      .cloud-3 {
+        width: 320px;
+        height: 207px;
+        background-image: url("https://www.freeiconspng.com/thumbs/rain-png/rain-clouds-png-27.png");
+        position: absolute;
+        z-index: 1;
+      }
+      .cloud-1 {
+        top: 200px;
+        left: 300px;
+      }
+      .cloud-2 {
+        top: 400px;
+        left: 800px;
+      }
+      .cloud-3 {
+        top: 100px;
+        left: 1200px;
+      }
+      .rain-1,
+      .rain-2,
+      .rain-3 {
+        width: 100px;
+        height: 100px;
+        z-index: 0;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        opacity: 0;
+      }
+      .rain-1 {
+        top: 250px;
+        left: 400px;
+        background-image: url("https://png.pngtree.com/png-clipart/20230512/original/pngtree-isolated-cat-on-white-background-png-image_9158356.png");
+      }
+      .rain-2 {
+        top: 450px;
+        left: 900px;
+        background-image: url("https://www.freeiconspng.com/thumbs/dog-png/dog-png-30.png");
+      }
+      .rain-3 {
+        top: 150px;
+        left: 1300px;
+        background-image: url("https://png.pngtree.com/png-vector/20240129/ourmid/pngtree-hamster-png-with-ai-generated-png-image_11563624.png");
+      }
+      .cloud-1:hover ~ .rain-1,
+      .cloud-2:hover ~ .rain-2,
+      .cloud-3:hover ~ .rain-3 {
+        opacity: 1;
+        animation-name: fallAndRotate;
+        animation-duration: 2s;
+        animation-timing-function: ease-in;
+        animation-fill-mode: forwards;
+      }
+      @keyframes fallAndRotate {
+        0% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        25% {
+          transform: translateY(100px) rotate(90deg);
+        }
+        50% {
+          transform: translateY(250px) rotate(180deg);
+        }
+        100% {
+          transform: translateY(400px) rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="cloud-1"></div>
+      <div class="rain-1"></div>
+      <div class="cloud-2"></div>
+      <div class="rain-2"></div>
+      <div class="cloud-3"></div>
+      <div class="rain-3"></div>
+    </div>
+  </body>
+</html>
